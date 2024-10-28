@@ -1,1 +1,37 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --main-font: 'Inter';
+    --accent-font: 'PressStart2P-Regular';
+
+    --color: black;
+    --bg-color: white;
+    --heart-color: red;
+    --stroke-color: white;
+
+    --floppy-size: 28px;
+    --button-remember-flex-direction: column;
+    --card-image-label-top: 25px;
+    --card-image-label-right: 25px;
+}
+
+/* Variables for small screens (<= 375px) */
+@media screen and (max-width: 375px) {
+    :root {
+        --card-image-label-right: 11px;
+    }
+}
+
+/* Variables for medium screens (between 376px and 500px) */
+@media screen and (min-width: 376px) {
+    :root {
+        --button-remember-flex-direction: row;
+    }
+}
+
+/* Variables for large screens (> 500px) */
+@media screen and (min-width: 500px) {
+    :root {
+        --floppy-size: 21px;
+    }
+}
