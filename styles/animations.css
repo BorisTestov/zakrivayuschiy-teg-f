@@ -78,7 +78,6 @@
 }
 
 .like-icon .heart {
-  transition: fill .1s;
   transform-origin: center center;
 }
 
@@ -89,7 +88,7 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--heart-color);
-  transition: fill .3s linear;
+  transition: fill .3s 0.05s linear;
 }
 
 .like-icon .core {
@@ -100,12 +99,12 @@
 
 .like-icon.is-liked .core {
   fill: var(--heart-color);
-  transition: fill .1s linear;
+  transition: fill .3s linear;
 }
 
 .like-icon .contour {
   fill: var(--accent-color);
-  transition: fill .3s 0.06s linear;
+  transition: fill .1s linear;
 }
 
 .like-icon.is-liked .contour {

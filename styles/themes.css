@@ -20,7 +20,7 @@
 @media (prefers-color-scheme: light) {
     :root {
         --border-color: black;
-        --bg-color: #d3d3d3;
+        --bg-color: white;
         --linear-gradient-first: #e7e7e7;
         --mix-blend-color: white;
         --linear-gradient-second: #1a1a1a;

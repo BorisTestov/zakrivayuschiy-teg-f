@@ -157,7 +157,6 @@
     color: var(--accent-color);
     opacity: 0.5;
     mix-blend-mode: hard-light;
-    -webkit-text-stroke: 1px var(--stroke-color);
     text-shadow: 0 var(--stroke-color), 0 1px var(--stroke-color),
     0 -1px var(--stroke-color), 1px 0 var(--stroke-color);
 }
@@ -207,7 +206,6 @@
 .card__icon-button:focus-visible {
     border: 2px solid var(--accent-color);
     outline: none;
-    transition: border 0.3s ease;
 }
 
 .card__like-button {
@@ -221,6 +219,10 @@
     position: relative;
 }
 
+.text-button {
+    transition: box-shadow 0.3s ease;
+}
+
 .theme-menu__button:focus,
 .text-button:focus,
 .card__icon-button:focus {
@@ -231,7 +233,6 @@
     outline: none;
     border: 2px solid var(--accent-color);
     box-shadow: 2px 2px 0 0 var(--accent-color);
-    transition: box-shadow 0.3s ease;
 }
 
 .text-button:hover::before {
