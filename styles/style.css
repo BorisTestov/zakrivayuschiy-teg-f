@@ -31,7 +31,7 @@
 .header {
     color: var(--accent-color);
     text-transform: uppercase;
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     font-weight: 400;
     display: flex;
     flex-direction: column;
@@ -44,13 +44,14 @@
 }
 
 .header__title {
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     text-decoration: none;
+    outline: none;
 }
 
 .header__description {
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     margin-block-end: 4px;
 }
@@ -60,7 +61,7 @@
 }
 
 .theme-menu__button {
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     border: none;
     line-height: normal;
     font-style: normal;
@@ -70,13 +71,6 @@
     background-color: transparent;
     cursor: pointer;
     padding-inline-start: 27px;
-}
-
-.theme-menu__button:focus,
-.theme-menu__button:focus-visible,
-.button-save:focus,
-.button-save:focus-visible {
-    outline: none;
 }
 
 .card {
@@ -107,13 +101,6 @@
     line-height: 21px;
     font-weight: var(--text-weight);
     font-variation-settings: 'wght' var(--text-weight);
-}
-
-.card__content-text:nth-child(1) {
-    margin-block-end: 27px;
-}
-
-.card__content-text:nth-child(2) {
     margin-block-end: 25px;
 }
 
@@ -162,13 +149,17 @@
 
 .card__image-label {
     position: absolute;
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     font-size: 14px;
     font-weight: var(--text-weight);
     top: var(--card-image-label-top);
     right: var(--card-image-label-right);
     color: var(--accent-color);
     opacity: 0.5;
+    mix-blend-mode: hard-light;
+    -webkit-text-stroke: 1px var(--stroke-color);
+    text-shadow: 0 var(--stroke-color), 0 1px var(--stroke-color),
+    0 -1px var(--stroke-color), 1px 0 var(--stroke-color);
 }
 
 @supports (-webkit-text-stroke: 1px var(--stroke-color)) or (text-stroke: 1px var(--stroke-color)) {
@@ -213,9 +204,10 @@
     transition: border-color 0.3s ease;
 }
 
-.card__icon-button:focus,
 .card__icon-button:focus-visible {
+    border: 2px solid var(--accent-color);
     outline: none;
+    transition: border 0.3s ease;
 }
 
 .card__like-button {
@@ -229,27 +221,32 @@
     position: relative;
 }
 
-.card__like-button:focus-visible,
-.card__like-button:focus,
-.button-remember:focus-visible,
-.button-remember:focus {
+.theme-menu__button:focus,
+.text-button:focus,
+.card__icon-button:focus {
     outline: none;
 }
 
-.card__like-button:hover::before,
-.button-remember:hover::before {
+.text-button:focus-visible
+{
+    outline: none;
+    border: 2px solid var(--accent-color);
+    box-shadow: 2px 2px 0 0 var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.text-button:hover::before {
     width: 100%;
 }
 
-.card__like-button::before,
-.button-remember::before {
+.text-button::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     background-color: var(--accent-color);
-    transition: width 0.3s ease;
+    transition: width 0.5s ease-in-out;
     inline-size: 100%;
     block-size: 100%;
     width: 0;
@@ -266,7 +263,7 @@
 .button__text,
 .button__text-remember {
     font-size: 14px;
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     color: var(--mix-blend-color);
     font-weight: 400;
     font-style: normal;
@@ -283,7 +280,7 @@
 }
 
 .dialog::backdrop {
-    background-color: rgba(0 0 0 / 0.8);
+    background-color: rgba(0 0 0 / 0.75);
 }
 
 .dialog {
@@ -295,7 +292,7 @@
     padding: 30px;
     background-color: var(--bg-color);
     color: var(--accent-color);
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     font-size: 14px;
     font-weight: 400;
     max-inline-size: 357px;
@@ -316,7 +313,7 @@
 }
 
 .dialog__flex-text {
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     line-height: 1.5;
     white-space: normal;
     max-inline-size: 234px;
@@ -337,25 +334,8 @@
     text-transform: uppercase;
 }
 
-.button-save::before {
-    content: '';
-    top: 0;
-    left: 0;
-    display: block;
-    transition: width 0.3s ease-in-out;
-    block-size: 100%;
-    inline-size: 100%;
-    width: 0;
-    position: absolute;
-    background-color: var(--accent-color);
-}
-
-.button-save:hover::before {
-    width: 100%;
-}
-
 .button-save-text {
-    font-family: var(--accent-font), sans-serif;
+    font-family: var(--accent-font), fantasy;
     mix-blend-mode: difference;
     font-size: 14px;
     font-weight: 400;

@@ -7,7 +7,7 @@
 
 :root.theme-light {
     --border-color: black;
-    --bg-color: #d3d3d3;
+    --bg-color: white;
     --linear-gradient-first: #e7e7e7;
     --linear-gradient-second: #1a1a1a;
     --accent-color: black;
